@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Floran Business is an online billing system with business intelligence to manage your inventory and your yield. It also gives you the report in both graphical and CSV format.">
+  <meta name="author" content="Floran">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="icon" href="{% static 'pic/floran-logo.png' %}" type="image/x-icon" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/mainpage.css' %}">
+  <title>Vehicle System</title>
+</head>
+<body>
+    
+    
+  {% block content %}
+    <section id="home">
+      <div class="logo"> Vehicle System</div>
+      <img src="{% static 'img/bg.jpg' %}" class="bg">
+      <div class="content" id="home" data-aos="fade-up">
+        <h2>Vehicle System</h2>
+        <!-- <h4>One stop to manage your vehicle System</h4> -->
+
+        <a class="button" href="{% url 'vehicle-list' %}">Home</a>
+        
+      </div>
+      
+    </section>
+    {% endblock content %}
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          startEvent: 'DOMContentLoaded',
+          offset:200,
+          duration:1000,
+          once:false,
+      });
+    </script>
+      
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>

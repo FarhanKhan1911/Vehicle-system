@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	
+	<style type="text/css">
+		.card{
+			margin-top: 10px;
+		}
+
+        a,
+        a:hover{
+            color: #1b1b1b;
+            text-decoration: none;
+        }
+
+        
+	</style>
+	<div class="row">
+        <div class="col-12">
+            <h1>
+                Vehicles List
+            </h1>
+        </div>
+        <hr>
+        {% for vehicle in vehicles %}
+        <div class='col-md-3 col-6'>
+            <a href="{% url 'vehicle-detail' vehicle.id%}">
+                <div class="card">
+                    <img src="{{ vehicle.photo.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">{{ vehicle.name}}</h4>
+                    </div>
+                </div>
+            </a>
+                </div>
+        {% endfor %}
+	</div>
+</div>
+{% endblock content %}

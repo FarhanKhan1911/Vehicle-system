@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    
+	<div class="row">
+        <div class='col-12'>
+            <div class="card" >
+                <div class="card-header">
+                    <h4>
+
+                        {% if object %}
+                        Update {{ object }} data
+                        {% else %}
+                        Add new vehicle detail
+                        {% endif %}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                      
+                        {% include 'form_snippet.html' %}
+                      
+                        {% if object %}
+                          <input type="submit" class="btn btn-primary" value="Update Record">
+                        {% else %}
+                          <input type="submit" class="btn btn-primary" value="Add new record">
+                        {% endif %}
+                      </form>
+                </div>
+            </div>
+        </div>
+	</div>
+
+{% endblock content %}

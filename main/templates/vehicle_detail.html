@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="row" style="margin-bottom: 50px;">
+        <div class="col-md-10" style="margin-top: 10px;">
+            <div class="row">
+                <div class="col-md-1 col-2">
+                    <img src="{{ object.photo.url}}" class="rounded-circle profile-img">
+                </div>
+                <div class="col-md-2 col-5">
+                    <button class="btn btn-secondary">
+                        <h5>
+                            Camera 1
+                        </h5>
+                    </button>
+                </div>
+                <div class="col-md-2 col-5">
+                    <button class="btn btn-secondary">
+                        <h5>
+                            Camera 2
+                        </h5>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" style="margin-top: 10px;">
+            <div class="row">
+                <div class="col-md-4 col-3">
+                    <button class="btn btn-outline-danger">
+                        <h5>
+                            OFF
+                        </h5>
+                    </button>
+                </div>
+                <div class="col-md-3 col-2">
+                    <button class="btn btn-success">
+                        <h5>
+                            ON
+                        </h5>
+                    </button>
+                </div>
+                <div class="col-md-2 col-2">
+                    <a href="{% url 'vehicle-update' object.id%}" class="btn btn-tool">
+                        <h5>
+                            <i class="fas fa-edit"></i>
+                        </h5>
+                    </a>
+                </div>
+                <div class="col-md-2 col-2">
+                    <a href="{% url 'vehicle-delete' object.id%}" class="btn btn-tool">
+                        <h5>
+                            <i class="fas fa-trash"></i>
+                        </h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+	</div>
+    <div class="row" style="display: flex !important;">
+        <div class="col-md-9">
+            <div class="map-responsive">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15089.741676268632!2d73.1040999!3d19.0005256!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbbb0905051e8c56e!2sAnjuman-I-Islam&#39;s%20Kalsekar%20Technical%20Campus!5e0!3m2!1sen!2sin!4v1637526406931!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card text-dark bg-light vehicle-card">
+                        <div class="card-body">
+                            <h3>Speed</h3>
+                            <h2>{{object.speed}}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 20px;">
+                    <div class="card text-dark bg-light vehicle-card">
+                        <div class="card-body">
+                            <h3>Average Speed</h3>
+                            <h2>{{object.avg_speed}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4" style="margin-top: 20px;">
+            <div class="card text-dark bg-light vehicle-card">
+                <div class="card-body">
+                    <h3>Engine Status</h3>
+                    <h2>{{object.Engine_status}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="margin-top: 20px;">
+            <div class="card text-dark bg-light vehicle-card">
+                <div class="card-body">
+                    <h3>Fuel Level</h3>
+                    <h2>{{object.fuel_level}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="margin-top: 20px;">
+            <div class="card text-dark bg-light vehicle-card">
+                <div class="card-body">
+                    <h3>Temperature</h3>
+                    <h2>{{object.temperature}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+
+{% endblock content %}
